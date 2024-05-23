@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -14,7 +14,7 @@
 <body>
     
     <!--NavBar-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white bg-body-tertiary py-3 fixed-top">
         <div class="container">
           <img src="assets/images/logo.png" alt="logo" width="50" height="50" class="d-inline-block align-text-top">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,17 +75,6 @@
        </div>    
       </section>
 
-
-      <!--Featured-->
-      <section id="featured" class="container">
-        <div class="row">
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/JD9RX.jpg"/>
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/JD8R.jpg"/>
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/JD7R.jpg"/>
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/JD6.jpeg"/>
-        </div>
-     </section>
-
      <!--New-->
       <section id="new" class="w-100">
         <div class="row p-0 m-0">
@@ -98,8 +87,17 @@
               <button class="text-uppercase">Shop Now</button>
             </div>
           </div>
+          <!--8R-->
+          <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+            <img class="img-fluid" src="assets/images/JD8R.jpg"/>
+            <div class="details">
+              <h3>John Deere 8R</h3>
+              <p>John Deere 8R Series Tractors feature the CommandView III cab, which provides operators with a comfortable and convenient work environment.</p>
+              <button class="text-uppercase">Shop Now</button>
+            </div>
+          </div>
             <!--7R-->
-            <div class="three col-lg-4 col-md-12 col-sm-12 p-0">
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
               <img class="img-fluid" src="assets/images/JD7R.jpg"/>
               <div class="details">
                 <h3>John Deere 7R</h3>
@@ -109,6 +107,67 @@
             </div>
         </div>
       </section>  
+
+      <!--Featured-->
+      <section id="featured" class="my-5 pb-5">
+        <div class="container text-center mt-5 py-5">
+          <h3>Featured tractor</h3>
+          <hr>
+          <p>Check out our featured tractor</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+          <div class="product col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid md-3" src="assets/images/JD9RX.jpg"/>
+            
+            <h5 class="p-name">John Deere 9RX</h5>
+            <h4 class="p-price">R10 000 000</h4>
+            <button class="Buy-btn">Buy Now</button>
+          </div>
+
+          <div class="product col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid md-3" src="assets/images/JD100.jpeg"/>
+            
+            <h5 class="p-name">John Deere 100 series</h5>
+            <h4 class="p-price">R230 000</h4>
+            <button class="Buy-btn">Buy Now</button>
+          </div>
+
+          <div class="product col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid md-3" src="assets/images/JD2038.jpeg"/>
+            
+            <h5 class="p-name">John Deere 2038</h5>
+            <h4 class="p-price">R400 000</h4>
+            <button class="Buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!--Footer-->
+      <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <img class="logo" src="assets/images/logo.png"/>
+            <p class="pt-3">John Deere is a leading manufacturer in the agriculture environment</p>
+          </div>
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pt-3">Quick Links</h5>
+            <ul class="text-uppercase">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <ul class="text-uppercase">
+              <li><a href="#">+27 71 123 4567</a></li>
+          </div>
+            
+        </div>
+      </footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
