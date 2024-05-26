@@ -100,6 +100,20 @@ h6{
 opacity: 0.8;
 }
 
+.Buy-btn{
+    background-color: #0a44e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.Buy-btn:hover{
+    background-color: #118117;
+    color: white;
+}
 
 
 footer{
