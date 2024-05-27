@@ -115,6 +115,46 @@ h6{
     text-align: center;
 }
 
+.cart-total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cart-total table{
+    width: 100%;
+    max-width: 500px;
+    border-top:3px solid blue;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+.checkout-btn{
+    display: block;
+    width: 10%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0a44e2;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.checkout-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-btn:hover{
+    background-color: green;
+}
+
+
 
 
 
