@@ -81,7 +81,7 @@ h6{
 
 }
 
-#login-form{
+#register-form{
     width: 50%;
     margin: 0 auto;
     padding: 20px;
@@ -91,12 +91,12 @@ h6{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#login-form input{
+#register-form input{
     width: 50%;
     margin: 5px auto;
 }
 
-#login-form button{
+#register-form button{
     width: 50%;
     margin: 5px auto;
     padding: 10px;
@@ -109,10 +109,12 @@ h6{
     cursor: pointer;
 }
 
-#login-form button:hover{
+#register-form button:hover{
     background-color: green;
 }
 
 
 
-
+footer{
+    background-color: white;
+}

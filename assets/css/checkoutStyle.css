@@ -81,38 +81,13 @@ h6{
 
 }
 
-#login-form{
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 45%;
+    margin: 10px auto
 }
 
-#login-form input{
-    width: 50%;
-    margin: 5px auto;
+#checkout-form .checkout-large-element{
+    width: 90%
 }
-
-#login-form button{
-    width: 50%;
-    margin: 5px auto;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0a44e2;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#login-form button:hover{
-    background-color: green;
-}
-
-
-
 
