@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="89077f1e-f42c-4cff-bf50-328c03ee8877" name="rcbriovv_Ecommerce@102.222.124.11 Mapping">
+      <data-sources db="34460bff-b0cd-4425-b5f7-8826d8ce6d70" />
+      <scope>
+        <node negative="1">
+          <node kind="database" negative="1" />
+          <node kind="schema" qname="rcbriovv_Ecommerce" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
