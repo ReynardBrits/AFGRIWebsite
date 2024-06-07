@@ -1,3 +1,28 @@
+<?php
+global $DBConnectObj;
+include 'server/connection.php';
+session_start();
+
+if(isset($_SESSION['cart']) || empty($_SESSION['cart']))
+{
+    echo "Cart is empty";
+    exit();
+}
+
+$Cart = $_SESSION['cart'];
+$products = [];
+
+foreach ($Cart as $product_id => $quantity)
+{
+    $sql = "SELECT * FROM products WHERE id = $product_id";
+    $stmt = $DBConnectObj->prepare($sql);
+    $stmt->execute([$product_id]);
+    $product = $stmt->fetch();
+    $product['quantity'] = $quantity;
+    $products[] = $product;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +49,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -71,16 +96,18 @@
         </tr>
         <tr>
             <td>
+                <?php foreach ($products as $product): ?>
                 <div class="product-info">
                     <img src="assets/images/JD9RX.jpg"/>
 
                     <div>
-                        <p>John Deere 9RX</p>
-                        <small><span>R</span>10,500,000</small>
+                        <p><?php echo htmlspecialchars($product['name']);?></p>
+                        <small><span>R</span><?php echo htmlspecialchars($product['price']); ?></small>
                         <br>
                         <a class="remove-btn" href="#">Remove</a>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </td>
 
             <td>

@@ -1,3 +1,29 @@
+<?php
+
+global $DBConnectObj;
+include 'server/connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm-password'];
+
+    $sql = "INSERT INTO users (username, name, lastname, email, password) VALUES ('$username', '$name', '$lastname', '$email', '$password')";
+
+    if ($DBConnectObj->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $DBConnectObj->error;
+    }
+
+    $DBConnectObj->close();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +50,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -37,7 +63,7 @@
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Cart.html">Basket</a></li>
+                        <li><a class="dropdown-item" href="Cart.php">Basket</a></li>
                         <li><a class="dropdown-item" href="Account.html">Account</a></li>
                     </ul>
                 </li>
@@ -88,7 +114,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Register</button>
            <div class="form-group">
-               <p>Already have an account? <a href="Login.html">Login</a></p>
+               <p>Already have an account? <a href="Login.php">Login</a></p>
            </div>
        </form>
 

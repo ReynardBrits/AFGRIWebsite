@@ -1,3 +1,13 @@
+<?php
+global $DBConnectObj;
+include 'server/connection.php';
+$sql = "SELECT * FROM products";
+$stmt = $DBConnectObj->prepare($sql);
+$stmt->execute();
+$products = $stmt->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +34,7 @@
            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
              <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+               <a class="nav-link active" aria-current="page" href="home.php">Home</a>
              </li>
 
              <li class="nav-item">
@@ -37,7 +47,7 @@
                </a>
 
                <ul class="dropdown-menu">
-                 <li><a class="dropdown-item" href="Cart.html">Basket</a></li>
+                 <li><a class="dropdown-item" href="Cart.php">Basket</a></li>
                  <li><a class="dropdown-item" href="Account.html">Account</a></li>
                  <li><hr class="dropdown-divider"></li>
                  <li><a class="dropdown-item" href="#">Contact Us</a></li>

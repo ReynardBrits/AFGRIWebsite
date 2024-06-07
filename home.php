@@ -24,7 +24,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="home.php">Home</a>
               </li>
 
               <li class="nav-item"> 
@@ -37,13 +37,13 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Front/Cart.html">Basket</a></li>
-                  <li><a class="dropdown-item" href="Front/Account.html">Account</a></li>
+                  <li><a class="dropdown-item" href="Cart.php">Basket</a></li>
+                  <li><a class="dropdown-item" href="Account.html">Account</a></li>
                 </ul>
               </li>
 
               <li class="nav-item"> 
-                <a class="nav-link" aria-current="page" href="Front/About.html">About Us</a>
+                <a class="nav-link" aria-current="page" href="About.html">About Us</a>
               </li>
 
             </ul>
