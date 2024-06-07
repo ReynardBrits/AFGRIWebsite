@@ -38,6 +38,7 @@ foreach ($Cart as $product_id => $quantity)
 </head>
 <body>
 
+
 <!--NavBar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white bg-body-tertiary py-3 fixed-top">
     <div class="container">

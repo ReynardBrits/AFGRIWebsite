@@ -8,6 +8,7 @@ $products = $stmt->fetchAll();
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
