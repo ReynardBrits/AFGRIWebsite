@@ -1,3 +1,16 @@
+<?php
+include 'server/connection.php';
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $user_id = $_SESSION['user_id'];
+    $total = $_POST['total'];
+
+    $sql = "INSERT INTO orders (user_id, total) VALUES (?, ?)";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

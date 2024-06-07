@@ -14,7 +14,7 @@ $products = [];
 
 foreach ($Cart as $product_id => $quantity)
 {
-    $sql = "SELECT * FROM products WHERE id = $product_id";
+    $sql = "SELECT * FROM products WHERE id = ? ";
     $stmt = $DBConnectObj->prepare($sql);
     $stmt->execute([$product_id]);
     $product = $stmt->fetch();
