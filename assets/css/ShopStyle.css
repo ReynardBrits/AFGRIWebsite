@@ -87,13 +87,18 @@ h6{
 
 .product{
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+    padding: 2rem;
 }
+
+
 
 .product img{
     transition: 0.3s all;
     width: auto;
     height: 100%;
+    padding-top: 2rem;
+
 }
 
 .product:hover img{
