@@ -66,7 +66,7 @@ h6{
     color: rgb(241, 53, 6);
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 600px) {
     .nav-buttons {
         margin: 10px;
     }
@@ -76,6 +76,15 @@ h6{
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
+    }
+
+    .product{
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .product img{
+        max-height: 200px;
     }
 
 
@@ -96,7 +105,6 @@ h6{
 .product img{
     transition: 0.3s all;
     width: auto;
-    height: 100%;
     padding-top: 2rem;
 
 }

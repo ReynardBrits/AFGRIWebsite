@@ -39,7 +39,7 @@ $products = $stmt->fetchAll();
              </li>
 
              <li class="nav-item">
-               <a class="nav-link" aria-current="page" href="shop.html">Shop</a>
+               <a class="nav-link" aria-current="page" href="shop.php">Shop</a>
              </li>
 
              <li class="nav-item dropdown">

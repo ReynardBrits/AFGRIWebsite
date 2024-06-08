@@ -1,3 +1,11 @@
+<?php
+global $DBConnectObj;
+$sql = "SELECT * FROM products";
+$stmt = $DBConnectObj->prepare($sql);
+$stmt->execute();
+$products = $stmt->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,23 +153,7 @@
 
 
 
-      <nav aria-label="page navigation example">
-        <ul class="pagination mt-5">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+
 
 
 
