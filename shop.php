@@ -1,9 +1,7 @@
 <?php
 global $DBConnectObj;
 $sql = "SELECT * FROM products";
-$stmt = $DBConnectObj->prepare($sql);
-$stmt->execute();
-$products = $stmt->fetchAll();
+$result = $DBConnectObj->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +35,7 @@ $products = $stmt->fetchAll();
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="shop.html">Shop</a>
+            <a class="nav-link" aria-current="page" href="shop.php">Shop</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -73,39 +71,27 @@ $products = $stmt->fetchAll();
         <h3>Agriculture Tractors</h3>
         <hr>
       </div>
-      <div class="row mx-auto container-fluid">
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD9RX.jpg"/>
 
-          <h5 class="p-name">John Deere 9RX</h5>
-          <h4 class="p-price">R10 000 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
+        <?php
+        $sql = "SELECT * FROM products";
+        $result = $DBConnectObj->query($sql);
 
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD8R.jpg"/>
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="product col-lg-3 col-md-4 col-sm-12">';
+                echo '<img class="img-fluid md-3" src="' . $row["image"] . '"/>';
+                echo '<h5 class="p-name">' . $row["name"] . '</h5>';
+                echo '<h4 class="p-price">' . $row["price"] . '</h4>';
+                echo '<button class="Buy-btn">Buy Now</button>';
+                echo '</div>';
+            }
+        } else {
+            echo "No products found";
+        }
+        $DBConnectObj->close();
+        ?>
 
-          <h5 class="p-name">John Deere 8R</h5>
-          <h4 class="p-price">R8 000 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD7R.jpg"/>
-
-          <h5 class="p-name">John Deere 7R</h5>
-          <h4 class="p-price">R6 500 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD6.jpeg"/>
-
-          <h5 class="p-name">John Deere 6</h5>
-          <h4 class="p-price">R4 500 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-
-        </div>
       </div>
     </section>
 
