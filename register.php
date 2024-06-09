@@ -1,30 +1,45 @@
 <?php
+global $conn;
+session_start();
 
-global $DBConnectObj;
 include 'server/connection.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $name = $_POST['name'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirm-password'];
+if ($_SERVER["REQUEST_METHOD"] === 'POST'){
+    $usernameStr = htmlspecialchars($_POST['username']);
+    $nameStr = htmlspecialchars($_POST['name']);
+    $lastnameStr = htmlspecialchars($_POST['lastname']);
+    $emailStr = htmlspecialchars($_POST['email']);
+    $passwordStr = htmlspecialchars($_POST['password']);
+    $confirmPasswordStr = htmlspecialchars($_POST['confirmPassword']);
 
-    $sql = "INSERT INTO users (username, name, lastname, email, password) VALUES ('$username', '$name', '$lastname', '$email', '$password')";
-
-    if ($DBConnectObj->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $DBConnectObj->error;
+    if ($passwordStr !== $confirmPasswordStr){
+        die(json_encode(array('error' => 'Passwords do not match')));
     }
 
-    $DBConnectObj->close();
+    $HashedPassword = password_hash($passwordStr, PASSWORD_BCRYPT);
+
+    $CreateUser = $conn->prepare("INSERT INTO users (username, name, lastname, email, password) VALUES (?, ?, ?, ?, ?)");
+
+    if (!$CreateUser){
+        die(json_encode(array('error' => 'Failed to prepare statement')));
+    }
+
+    $CreateUser->bind_param("sssss", $usernameStr, $nameStr, $lastnameStr, $emailStr, $HashedPassword);
+
+    if ($CreateUser->execute()){
+        echo json_encode(array('success' => 'User created successfully'));
+    }
+    else{
+        echo json_encode(array('error' => 'Failed to create user'));
+    }
+
+    $CreateUser->close();
+} else{
+    echo json_encode(array('error' => 'Invalid request method'));
 }
 
+$conn->close();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,15 +119,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            <div class="form-group">
                <label for="email">Email</label>
                <input type="email" class="form-control" id="email" name="email" required>
+
+           <div class="form-row">
+               <div class="form-group col-md-6">
+                   <label for="password">Password</label>
+                   <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                   <div class="error-message text-danger" id="password-error"></div>
+               </div>
+               <div class="form-group col-md-6">
+                   <label for="confirmPassword">Confirm Password</label>
+                   <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                   <div class="error-message text-danger" id="confirmPassword-error"></div>
+               </div>
            </div>
-           <div class="form-group">
-               <label for="password">Password</label>
-               <input type="password" class="form-control" id="password" name="password" required>
-           </div>
-              <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
-              </div>
               <button type="submit" class="btn btn-primary">Register</button>
            <div class="form-group">
                <p>Already have an account? <a href="Login.php">Login</a></p>

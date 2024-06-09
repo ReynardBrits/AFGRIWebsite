@@ -1,9 +1,6 @@
-<?php
-global $DBConnectObj;
-$sql = "SELECT * FROM products";
-$result = $DBConnectObj->query($sql);
-?>
+<?php global$G_products;
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,71 +68,24 @@ $result = $DBConnectObj->query($sql);
         <h3>Agriculture Tractors</h3>
         <hr>
       </div>
+        <div class="row mx-auto container-fluid">
+            <?php include('server/get_products.php'); ?>
 
-        <?php
-        $sql = "SELECT * FROM products";
-        $result = $DBConnectObj->query($sql);
+            <?php while($row = $G_products->fetch_assoc()) {?>
+            <div class="product col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid md-3" src="assets/images/<?php echo $row['product_image']?>"/>
 
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                echo '<div class="product col-lg-3 col-md-4 col-sm-12">';
-                echo '<img class="img-fluid md-3" src="' . $row["image"] . '"/>';
-                echo '<h5 class="p-name">' . $row["name"] . '</h5>';
-                echo '<h4 class="p-price">' . $row["price"] . '</h4>';
-                echo '<button class="Buy-btn">Buy Now</button>';
-                echo '</div>';
-            }
-        } else {
-            echo "No products found";
-        }
-        $DBConnectObj->close();
-        ?>
+                <h5 class="p-name"><?php echo $row['name'] ?></h5>
+                <h4 class="p-price"><?php echo $row['price'] ?></h4>
+                <button class="Buy-btn">Buy Now</button>
+            </div>
 
-      </div>
+            <?php } ?>
+        </div>
+
+
     </section>
 
-    <section id="Utility" class="my-5 pb-5">
-      <div class="container text-center mt-5 py-5">
-        <h3>Utility Tractors</h3>
-        <hr>
-      </div>
-
-      <div class="row mx-auto container-fluid">
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD5E.jpeg"/>
-
-          <h5 class="p-name">John Deere 5E</h5>
-          <h4 class="p-price">R300 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD5M.jpeg"/>
-
-          <h5 class="p-name">John Deere 5M</h5>
-          <h4 class="p-price">R400 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD100.jpeg"/>
-
-          <h5 class="p-name">John Deere 100 series</h5>
-          <h4 class="p-price">R100 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-        <div class="product col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid md-3" src="assets/images/JD2038.jpeg"/>
-
-          <h5 class="p-name">John Deere 2038</h5>
-          <h4 class="p-price">R300 000</h4>
-          <button class="Buy-btn">Buy Now</button>
-        </div>
-
-      </div>
-    </section>
 
 
 
