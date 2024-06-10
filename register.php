@@ -109,11 +109,11 @@ $conn->close();
                <input type="text" class="form-control" id="username" name="username" required>
            </div>
            <div class="form-group">
-               <label for="username">first Name</label>
+               <label for="firstName">first Name</label>
                <input type="text" class="form-control" id="name" name="username" required>
            </div>
            <div class="form-group">
-               <label for="username">Last Name</label>
+               <label for="lastname">Last Name</label>
                <input type="text" class="form-control" id="lastname" name="username" required>
            </div>
            <div class="form-group">
@@ -132,7 +132,7 @@ $conn->close();
                    <div class="error-message text-danger" id="confirmPassword-error"></div>
                </div>
            </div>
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
            <div class="form-group">
                <p>Already have an account? <a href="Login.php">Login</a></p>
            </div>
@@ -141,7 +141,6 @@ $conn->close();
     </div>
 
 </section>
-</body>
 
 <!--Footer-->
 <footer class="mt-5 py-5">
@@ -170,6 +169,7 @@ $conn->close();
 </footer>
 
 
+<script src="assets/js/Register.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
