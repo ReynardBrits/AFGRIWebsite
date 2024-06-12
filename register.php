@@ -109,7 +109,7 @@ $conn->close();
                <input type="text" class="form-control" id="username" name="username" required>
            </div>
            <div class="form-group">
-               <label for="firstName">first Name</label>
+               <label for="firstName">First Name</label>
                <input type="text" class="form-control" id="name" name="username" required>
            </div>
            <div class="form-group">
@@ -171,6 +171,8 @@ $conn->close();
 
 <script src="assets/js/Register.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
